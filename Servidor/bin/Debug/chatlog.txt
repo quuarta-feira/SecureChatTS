@@ -1,0 +1,7 @@
+[20:27:03] filipa:ola
+[20:56:34] filipa:ola
+[20:56:34] Cliente 1 ligou-se.
+[20:56:34] Cliente 1 desligou-se.
+[20:57:34] filipa:ola
+[20:57:34] Cliente 1 ligou-se.
+[20:57:34] Cliente 1 desligou-se.

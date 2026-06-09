@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SecureChatTS/SecureChatTS.csproj" Id="9c43a54b-3ec1-444e-a0fc-db4397f33f23" />
+  <Project Path="Servidor/Servidor.csproj" Id="116d1410-59e9-430a-9722-c22a2df33f30" />
+</Solution>
