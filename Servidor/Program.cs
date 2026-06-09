@@ -149,6 +149,32 @@ namespace Servidor
 
                     case ProtocolSICmdType.DATA: // Se o pacote for uma mensagem de texto normal:
                                                  // Transforma os bytes em letras e escreve o texto na janela do servidor
+
+                        string textoRecebido = DecryptString( protocolSI.GetStringFromData());
+
+                        string[] partes = textoRecebido.Split( new char[] { '|' }, 2);
+
+                        string mensagem = partes[0];
+                        string assinatura = partes[1];
+
+                        bool assinaturaValida =
+                            VerificarAssinatura(
+                                mensagem,
+                                assinatura
+                            );
+
+                        if (!assinaturaValida)
+                        {
+                            Console.WriteLine(
+                                "Assinatura inválida!"
+                            );
+                            break;
+                        }
+
+                        Console.WriteLine(
+                            "Assinatura válida."
+                        );
+
                         string msgTexto = protocolSI.GetStringFromData();
 
                         
@@ -175,7 +201,7 @@ namespace Servidor
                         );
 
 
-                        Console.WriteLine("Cliente " + clientID + " : " + protocolSI.GetStringFromData());
+                        Console.WriteLine("Cliente " + clientID + " : " + mensagem);
 
                         Program.totalMensagens++;
 
@@ -183,12 +209,12 @@ namespace Servidor
                             "Mensagens processadas: "
                             + Program.totalMensagens
                         );
+                        string mensagemCifrada = EncryptString(mensagem);
 
                         byte[] pacoteParaTodos =
-                            protocolSI.Make(
-                                ProtocolSICmdType.DATA,
-                                msgTexto
-                            );
+                            protocolSI.Make(ProtocolSICmdType.DATA,mensagemCifrada);
+
+                      
                         // Percorremos a lista e "empurramos" a mensagem para cada um
                         foreach (ClientHandler outroCliente in Program.clientesLigados)
                         {
@@ -236,6 +262,42 @@ namespace Servidor
                 CryptoConfig.MapNameToOID("SHA256"),
                 assinatura
             );
+        }
+
+        private string DecryptString(string texto)
+        {
+            ICryptoTransform decryptor =
+                Program.aesGlobal.CreateDecryptor();
+
+            byte[] dados =
+                Convert.FromBase64String(texto);
+
+            byte[] decifrado =
+                decryptor.TransformFinalBlock(
+                    dados,
+                    0,
+                    dados.Length
+                );
+
+            return Encoding.UTF8.GetString(decifrado);
+        }
+
+        private string EncryptString(string texto)
+        {
+            ICryptoTransform encryptor =
+                Program.aesGlobal.CreateEncryptor();
+
+            byte[] dados =
+                Encoding.UTF8.GetBytes(texto);
+
+            byte[] cifrado =
+                encryptor.TransformFinalBlock(
+                    dados,
+                    0,
+                    dados.Length
+                );
+
+            return Convert.ToBase64String(cifrado);
         }
     }
 }

@@ -184,7 +184,11 @@ namespace SecureChatTS
                     if (protocolSI.GetCmdType() == ProtocolSICmdType.DATA)
                     {
                         MessageBox.Show("Recebi DATA");
-                        string msgRecebida = DecryptString(protocolSI.GetStringFromData());
+                        string textoRecebido = DecryptString(protocolSI.GetStringFromData());
+
+                        string[] partesAssinatura = textoRecebido.Split( new char[] { '|' },2 );
+
+                        string msgRecebida = partesAssinatura[0];
 
                         MessageBox.Show(msgRecebida);
 
