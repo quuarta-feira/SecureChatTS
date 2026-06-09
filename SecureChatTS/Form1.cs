@@ -8,10 +8,10 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 // Necessário para lidar com Endereços IP (IPAddress) e pontos de ligação (IPEndPoint).
-using System.Net;
+
 using System.Net.Sockets;
 // Para poder usar o TcpClient, o TcpListener nem o NetworkStream
-using System.Net.Sockets;
+
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -48,20 +48,7 @@ namespace SecureChatTS
         private string privateKey;
 
 
-        private static byte[] GenerateSalt(int size)
-        {
-            //Gera o numero encriptado aleatorio.
-            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-            byte[] buff = new byte[size];
-            rng.GetBytes(buff);
-            return buff;
-        }
-
-        private static byte[] GenerateSaltedHash(string plainText, byte[] salt)
-        {
-            Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(plainText, salt, NUMBER_OF_ITERATIONS);
-            return rfc2898.GetBytes(32);
-        }
+        
 
         
 
@@ -110,6 +97,58 @@ namespace SecureChatTS
             t.Start();
         }
 
+
+        private static byte[] GenerateSalt(int size)
+        {
+            //Gera o numero encriptado aleatorio.
+            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+            byte[] buff = new byte[size];
+            rng.GetBytes(buff);
+            return buff;
+        }
+
+        private static byte[] GenerateSaltedHash(string plainText, byte[] salt)
+        {
+            Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(plainText, salt, NUMBER_OF_ITERATIONS);
+            return rfc2898.GetBytes(32);
+        }
+
+        private string EncryptString(string texto)
+        {
+            ICryptoTransform encryptor =
+                aes.CreateEncryptor();
+
+            byte[] dados =
+                Encoding.UTF8.GetBytes(texto);
+
+            byte[] cifrado =
+                encryptor.TransformFinalBlock(
+                    dados,
+                    0,
+                    dados.Length
+                );
+
+            return Convert.ToBase64String(cifrado);
+        }
+
+        private string DecryptString(string texto)
+        {
+            ICryptoTransform decryptor =
+                aes.CreateDecryptor();
+
+            byte[] dados =
+                Convert.FromBase64String(texto);
+
+            byte[] decifrado =
+                decryptor.TransformFinalBlock(
+                    dados,
+                    0,
+                    dados.Length
+                );
+
+            return Encoding.UTF8.GetString(decifrado);
+        }
+
         private void LerMensagens()
         {
             while (true)
@@ -119,21 +158,24 @@ namespace SecureChatTS
                     // Fica aqui parado à espera que chegue QUALQUER coisa do servidor
                     networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
 
+                    Console.WriteLine(protocolSI.GetCmdType());
+
                     if (protocolSI.GetCmdType() ==
                         ProtocolSICmdType.USER_OPTION_2)
                     {
-                        string chaveRecebida =
-                            protocolSI.GetStringFromData();
+                        string chaveRecebida = protocolSI.GetStringFromData();
 
-                        byte[] chaveCifrada =
-                            Convert.FromBase64String(chaveRecebida);
+                        byte[] chaveCifrada = Convert.FromBase64String(chaveRecebida);
 
-                        byte[] chaveAES =
-                            rsa.Decrypt(chaveCifrada, false);
+                        string dadosAES = Encoding.UTF8.GetString(
+                            rsa.Decrypt(chaveCifrada, false)
+                        );
+
+                        string[] partes = dadosAES.Split('|');
 
                         aes = Aes.Create();
-
-                        aes.Key = chaveAES;
+                        aes.Key = Convert.FromBase64String(partes[0]);
+                        aes.IV = Convert.FromBase64String(partes[1]);
 
                         MessageBox.Show("Chave AES recebida!");
                     }
@@ -141,12 +183,13 @@ namespace SecureChatTS
                     // Se o que chegou for uma mensagem (DATA)
                     if (protocolSI.GetCmdType() == ProtocolSICmdType.DATA)
                     {
-                        string msgRecebida = protocolSI.GetStringFromData();
+                        MessageBox.Show("Recebi DATA");
+                        string msgRecebida = DecryptString(protocolSI.GetStringFromData());
 
-                        
+                        MessageBox.Show(msgRecebida);
 
-                            // Obtém a hora atual no formato HH:mm:ss
-                            string hora = DateTime.Now.ToString("HH:mm:ss");
+                        // Obtém a hora atual no formato HH:mm:ss
+                        string hora = DateTime.Now.ToString("HH:mm:ss");
 
                             // Como esta thread é "esquema à parte", temos de usar Invoke para escrever na RichTextBox
                             richTextBox1.Invoke(new MethodInvoker(delegate
@@ -159,6 +202,7 @@ namespace SecureChatTS
                                 if (msgRecebida.Contains(":"))
                                 {
                                     string[] partes = msgRecebida.Split(new[] { ':' }, 2);
+
 
                                     // Define cor preta e negrito para o nome do remetente
                                     richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold);
@@ -187,6 +231,19 @@ namespace SecureChatTS
             }
 
 
+        }
+        private string AssinarMensagem(string mensagem)
+        {
+            byte[] dados =
+                Encoding.UTF8.GetBytes(mensagem);
+
+            byte[] assinatura =
+                rsa.SignData(
+                    dados,
+                    CryptoConfig.MapNameToOID("SHA256")
+                );
+
+            return Convert.ToBase64String(assinatura);
         }
 
         private bool UserExists(string username)
@@ -306,9 +363,14 @@ namespace SecureChatTS
 
             string mensagemCompleta = usernameAtual + ":" + msg;
 
+            string assinatura = AssinarMensagem(mensagemCompleta);
+
+            string pacoteFinal = mensagemCompleta + "|" + assinatura;
+            string mensagemCifrada = EncryptString(pacoteFinal);
+
             byte[] packet = protocoloEnvio.Make(
                 ProtocolSICmdType.DATA,
-                mensagemCompleta
+                mensagemCifrada
             );
             // Empurra os bytes pelo "tubo" (stream) em direção ao servidor
             networkStream.Write(packet, 0, packet.Length);

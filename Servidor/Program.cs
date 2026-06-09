@@ -21,9 +21,12 @@ namespace Servidor
 
         public static int totalMensagens = 0;
 
+        public static Aes aesGlobal = Aes.Create();
 
         // Define a porta fixa onde o servidor vai "abrir a porta"
         private const int PORT = 20000;
+
+       
 
         //contar os clientes que entram
         static void Main(string[] args)
@@ -118,20 +121,17 @@ namespace Servidor
                     case ProtocolSICmdType.USER_OPTION_1:
 
                         publicKeyCliente = protocolSI.GetStringFromData();
-
                         Console.WriteLine("Chave pública recebida.");
 
-                        aes = Aes.Create();
-
-                        byte[] chaveAES = aes.Key;
-
-                        RSACryptoServiceProvider rsa =
-                            new RSACryptoServiceProvider();
-
+                        RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
                         rsa.FromXmlString(publicKeyCliente);
 
+                        string dadosAES =
+                            Convert.ToBase64String(Program.aesGlobal.Key) + "|" +
+                            Convert.ToBase64String(Program.aesGlobal.IV);
+
                         byte[] chaveCifrada =
-                            rsa.Encrypt(chaveAES, false);
+                            rsa.Encrypt(Encoding.UTF8.GetBytes(dadosAES), false);
 
                         string chaveBase64 =
                             Convert.ToBase64String(chaveCifrada);
@@ -145,7 +145,6 @@ namespace Servidor
                         networkStream.Write(packet, 0, packet.Length);
 
                         Console.WriteLine("Chave AES enviada.");
-
                         break;
 
                     case ProtocolSICmdType.DATA: // Se o pacote for uma mensagem de texto normal:
@@ -215,6 +214,28 @@ namespace Servidor
                         break;
                 }
             }
+        }
+
+        private bool VerificarAssinatura( string mensagem, string assinaturaBase64)
+        {
+            RSACryptoServiceProvider rsa =
+                new RSACryptoServiceProvider();
+
+            rsa.FromXmlString(publicKeyCliente);
+
+            byte[] assinatura =
+                Convert.FromBase64String(
+                    assinaturaBase64
+                );
+
+            byte[] dados =
+                Encoding.UTF8.GetBytes(mensagem);
+
+            return rsa.VerifyData(
+                dados,
+                CryptoConfig.MapNameToOID("SHA256"),
+                assinatura
+            );
         }
     }
 }
