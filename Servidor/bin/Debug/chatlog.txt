@@ -28,3 +28,16 @@
 [14:52:06] Cliente 3 ligou-se.
 [14:52:21] Cliente 3 desligou-se.
 [14:52:25] Cliente 2 desligou-se.
+[18:47:52] Cliente 1 ligou-se.
+[18:48:05] Cliente 1 desligou-se.
+[18:54:07] Cliente 1 ligou-se.
+[18:54:31] Cliente 2 ligou-se.
+[18:54:49] joao:ola
+[18:54:54] filipa:ola
+[18:54:55] Cliente 1 desligou-se.
+[18:54:56] Cliente 2 desligou-se.
+[18:54:59] Cliente 3 ligou-se.
+[18:55:14] Cliente 4 ligou-se.
+[18:55:34] joao:ola
+[18:55:36] Cliente 4 desligou-se.
+[18:55:37] Cliente 3 desligou-se.

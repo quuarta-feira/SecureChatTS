@@ -41,6 +41,11 @@ namespace SecureChatTS
 
         private string usernameAtual = "";
 
+        private string connectionString =
+            @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="
+            + Application.StartupPath +
+            @"\SecureChatDB.mdf;Integrated Security=True";
+
 
         private RSACryptoServiceProvider rsa;
         private Aes aes;
@@ -276,8 +281,7 @@ namespace SecureChatTS
 
         private bool UserExists(string username)
         {
-            using (SqlConnection conn = new SqlConnection(
-                @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Filipa\source\repos\TS\SecureChatTS\SecureChatTS\SecureChatDB.mdf;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
@@ -304,10 +308,9 @@ namespace SecureChatTS
 
             try
             {
-                conn = new SqlConnection();
+                conn = new SqlConnection(connectionString);
 
-                conn.ConnectionString =
-                @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Filipa\source\repos\TS\SecureChatTS\SecureChatTS\SecureChatDB.mdf;Integrated Security=True";
+                
 
                 conn.Open();
 
@@ -353,8 +356,7 @@ namespace SecureChatTS
 
         private void Register(string username, byte[] saltedPasswordHash, byte[] salt)
         {
-            using (SqlConnection conn = new SqlConnection(
-                @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Filipa\source\repos\TS\SecureChatTS\SecureChatTS\SecureChatDB.mdf;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
