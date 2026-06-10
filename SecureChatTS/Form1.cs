@@ -62,7 +62,7 @@ namespace SecureChatTS
             InitializeComponent();
 
             CriarBaseDados();
-
+            CriarTabelaUsers();
 
             // CRIAR A COMUNICAÇÃO COM O SERVIDOR
 
@@ -105,14 +105,37 @@ namespace SecureChatTS
 
         private void CriarBaseDados()
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            string masterConnection =
+                @"Data Source=(LocalDB)\MSSQLLocalDB;
+                Initial Catalog=master;
+                Integrated Security=True";
+
+            using (SqlConnection conn = new SqlConnection(masterConnection))
             {
                 conn.Open();
 
-                string sql = @"
-                IF NOT EXISTS (
-                    SELECT * FROM sysobjects
-                    WHERE name='Users' AND xtype='U'
+                string sql =
+                @"IF DB_ID('SecureChatDB') IS NULL
+                CREATE DATABASE SecureChatDB";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void CriarTabelaUsers()
+        {
+            using (SqlConnection conn =
+                new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string sql =
+                @"IF NOT EXISTS
+                (
+                    SELECT *
+                    FROM sys.tables
+                    WHERE name = 'Users'
                 )
                 CREATE TABLE Users
                 (

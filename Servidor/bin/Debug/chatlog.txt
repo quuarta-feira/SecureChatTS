@@ -44,3 +44,5 @@
 [19:02:00] Cliente 1 ligou-se.
 [19:02:08] Cliente 1 desligou-se.
 [19:02:55] Cliente 1 ligou-se.
+[19:07:08] Cliente 1 ligou-se.
+[19:07:16] Cliente 1 desligou-se.
