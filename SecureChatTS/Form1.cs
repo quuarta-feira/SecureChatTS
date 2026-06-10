@@ -42,9 +42,7 @@ namespace SecureChatTS
         private string usernameAtual = "";
 
         private string connectionString =
-            @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="
-            + Application.StartupPath +
-            @"\SecureChatDB.mdf;Integrated Security=True";
+            @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=SecureChatDB;Integrated Security=True";
 
 
         private RSACryptoServiceProvider rsa;
