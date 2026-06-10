@@ -155,42 +155,62 @@ namespace SecureChatTS
             {
                 try
                 {
-                    // Fica aqui parado à espera que chegue QUALQUER coisa do servidor
                     networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
 
-                    Console.WriteLine(protocolSI.GetCmdType());
-
-                    if (protocolSI.GetCmdType() ==
-                        ProtocolSICmdType.USER_OPTION_2)
+                    if (protocolSI.GetCmdType() == ProtocolSICmdType.USER_OPTION_2)
                     {
-                        string chaveRecebida = protocolSI.GetStringFromData();
+                        string chaveRecebida =
+                            protocolSI.GetStringFromData();
 
-                        byte[] chaveCifrada = Convert.FromBase64String(chaveRecebida);
+                        byte[] chaveCifrada =
+                            Convert.FromBase64String(chaveRecebida);
 
-                        string dadosAES = Encoding.UTF8.GetString(
-                            rsa.Decrypt(chaveCifrada, false)
-                        );
+                        byte[] dadosAES =
+                            rsa.Decrypt(chaveCifrada, false);
 
-                        string[] partes = dadosAES.Split('|');
+                        string textoAES =
+                            Encoding.UTF8.GetString(dadosAES);
+
+                        string[] partesAES =
+                            textoAES.Split('|');
 
                         aes = Aes.Create();
-                        aes.Key = Convert.FromBase64String(partes[0]);
-                        aes.IV = Convert.FromBase64String(partes[1]);
 
-                        MessageBox.Show("Chave AES recebida!");
+                        aes.Key =
+                            Convert.FromBase64String(partesAES[0]);
+
+                        aes.IV =
+                            Convert.FromBase64String(partesAES[1]);
+
+                        //MessageBox.Show("AES recebido");
+
+                        continue;
                     }
 
-                    // Se o que chegou for uma mensagem (DATA)
+                    /*MessageBox.Show(
+                        "CMD = " +
+                        protocolSI.GetCmdType().ToString()
+                    );*/
+
                     if (protocolSI.GetCmdType() == ProtocolSICmdType.DATA)
                     {
-                        MessageBox.Show("Recebi DATA");
-                        string textoRecebido = DecryptString(protocolSI.GetStringFromData());
+                        //MessageBox.Show("Recebi DATA");
 
-                        string[] partesAssinatura = textoRecebido.Split( new char[] { '|' },2 );
+                        string recebido =
+                            protocolSI.GetStringFromData();
 
-                        string msgRecebida = partesAssinatura[0];
+                        /*MessageBox.Show(
+                            "Recebido: " +
+                            recebido
+                        );*/    
 
-                        MessageBox.Show(msgRecebida);
+                        string msgRecebida =
+                            DecryptString(recebido);
+
+                        /*MessageBox.Show(
+                            "Decifrado: " +
+                            msgRecebida
+                        );*/
 
                         // Obtém a hora atual no formato HH:mm:ss
                         string hora = DateTime.Now.ToString("HH:mm:ss");
@@ -231,7 +251,11 @@ namespace SecureChatTS
                         }
                     
                 }
-                catch { break; }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    break;
+                }
             }
 
 

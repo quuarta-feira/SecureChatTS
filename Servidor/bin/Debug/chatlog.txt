@@ -6,3 +6,25 @@
 [14:27:51] Cliente 2 desligou-se.
 [14:27:52] Cliente 3 desligou-se.
 [14:27:55] Cliente 4 ligou-se.
+[14:30:56] Cliente 1 ligou-se.
+[14:31:01] Cliente 2 ligou-se.
+[14:31:48] filipa:ola
+[14:31:57] filipa:tudo bem
+[14:32:07] filipa:adeus
+[14:39:48] Cliente 1 ligou-se.
+[14:40:04] Cliente 1 ligou-se.
+[14:40:12] Cliente 2 ligou-se.
+[14:41:19] Cliente 1 ligou-se.
+[14:44:16] Cliente 1 ligou-se.
+[14:44:34] Cliente 2 ligou-se.
+[14:44:50] joao:ola
+[14:45:43] Cliente 2 desligou-se.
+[14:45:45] Cliente 1 desligou-se.
+[14:51:33] Cliente 1 ligou-se.
+[14:51:45] Cliente 2 ligou-se.
+[14:51:56] joao:ola
+[14:52:00] filipa:adeus
+[14:52:03] Cliente 1 desligou-se.
+[14:52:06] Cliente 3 ligou-se.
+[14:52:21] Cliente 3 desligou-se.
+[14:52:25] Cliente 2 desligou-se.
