@@ -61,7 +61,8 @@ namespace SecureChatTS
         {
             InitializeComponent();
 
-            
+            CriarBaseDados();
+
 
             // CRIAR A COMUNICAÇÃO COM O SERVIDOR
 
@@ -102,6 +103,29 @@ namespace SecureChatTS
             t.Start();
         }
 
+        private void CriarBaseDados()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string sql = @"
+                IF NOT EXISTS (
+                    SELECT * FROM sysobjects
+                    WHERE name='Users' AND xtype='U'
+                )
+                CREATE TABLE Users
+                (
+                    Id INT IDENTITY(1,1) PRIMARY KEY,
+                    Username NVARCHAR(50) NOT NULL,
+                    SaltedPasswordHash VARBINARY(MAX) NOT NULL,
+                    Salt VARBINARY(MAX) NOT NULL
+                )";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
 
         private static byte[] GenerateSalt(int size)
         {

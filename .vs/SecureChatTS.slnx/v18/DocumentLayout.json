@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9C43A54B-3EC1-444E-A0FC-DB4397F33F23}|SecureChatTS\\SecureChatTS.csproj|C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\securechatts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9C43A54B-3EC1-444E-A0FC-DB4397F33F23}|SecureChatTS\\SecureChatTS.csproj|c:\\users\\filipa\\source\\repos\\securechatts\\securechatts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C43A54B-3EC1-444E-A0FC-DB4397F33F23}|SecureChatTS\\SecureChatTS.csproj|solutionrelative:securechatts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C43A54B-3EC1-444E-A0FC-DB4397F33F23}|SecureChatTS\\SecureChatTS.csproj|C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\securechatts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{9C43A54B-3EC1-444E-A0FC-DB4397F33F23}|SecureChatTS\\SecureChatTS.csproj|c:\\users\\filipa\\source\\repos\\securechatts\\securechatts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9C43A54B-3EC1-444E-A0FC-DB4397F33F23}|SecureChatTS\\SecureChatTS.csproj|solutionrelative:securechatts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -22,28 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\Servidor\\Program.cs",
-              "RelativeDocumentMoniker": "Servidor\\Program.cs",
-              "ToolTip": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\Servidor\\Program.cs",
-              "RelativeToolTip": "Servidor\\Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAqwBwAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T17:27:40.239Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -53,9 +36,9 @@
               "RelativeDocumentMoniker": "SecureChatTS\\Form1.cs",
               "ToolTip": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\SecureChatTS\\Form1.cs",
               "RelativeToolTip": "SecureChatTS\\Form1.cs",
-              "ViewState": "AgIAAFIBAAAAAAAAAAAuwGYBAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAuwEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T17:25:21.235Z",
+              "WhenOpened": "2026-06-10T18:01:29.537Z",
               "EditorCaption": ""
             },
             {
@@ -67,8 +50,21 @@
               "ToolTip": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\SecureChatTS\\Form1.cs [Design]",
               "RelativeToolTip": "SecureChatTS\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T17:20:14.364Z",
+              "WhenOpened": "2026-06-10T18:01:28.245Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\Servidor\\Program.cs",
+              "RelativeDocumentMoniker": "Servidor\\Program.cs",
+              "ToolTip": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\Servidor\\Program.cs",
+              "RelativeToolTip": "Servidor\\Program.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAawFIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T17:27:40.239Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -41,3 +41,6 @@
 [18:55:34] joao:ola
 [18:55:36] Cliente 4 desligou-se.
 [18:55:37] Cliente 3 desligou-se.
+[19:02:00] Cliente 1 ligou-se.
+[19:02:08] Cliente 1 desligou-se.
+[19:02:55] Cliente 1 ligou-se.
