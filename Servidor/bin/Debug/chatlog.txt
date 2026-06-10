@@ -1,73 +1,8 @@
-[20:27:03] filipa:ola
-[20:56:34] filipa:ola
-[20:56:34] Cliente 1 ligou-se.
-[20:56:34] Cliente 1 desligou-se.
-[20:57:34] filipa:ola
-[20:57:34] Cliente 1 ligou-se.
-[20:57:34] Cliente 1 desligou-se.
-[18:05:10] fuA6ewpkJBHOBG+xhrBWuw==
-[18:05:10] Cliente 1 ligou-se.
-[18:05:10] Cliente 1 desligou-se.
-[18:20:49] ejkmn0o+lxbRQVAKp8RWXA==
-[18:20:49] Cliente 1 ligou-se.
-[18:20:49] Cliente 1 desligou-se.
-[18:22:30] tIAmx49eF5maQTizmqfCEQ==
-[18:22:30] Cliente 1 ligou-se.
-[18:22:30] Cliente 1 desligou-se.
-[18:22:41] tIAmx49eF5maQTizmqfCEQ==
-[18:22:41] Cliente 1 ligou-se.
-[18:22:41] Cliente 1 desligou-se.
-[18:22:49] Xf7FuBVE0pptORNqOyo4ZA==
-[18:22:49] Cliente 2 ligou-se.
-[18:22:49] Cliente 2 desligou-se.
-[18:23:44] Xf7FuBVE0pptORNqOyo4ZA==
-[18:23:44] Cliente 2 ligou-se.
-[18:23:44] Cliente 2 desligou-se.
-[18:26:39] yu6zw+pOu4opFjDCwMF39Q==
-[18:26:39] Cliente 1 ligou-se.
-[18:26:39] Cliente 1 desligou-se.
-[18:27:08] 7DoNXfwJcqqFbxVjqwPS5A==
-[18:27:08] Cliente 2 ligou-se.
-[18:27:08] Cliente 2 desligou-se.
-[18:32:41] DbHAdaO6sTjnQi/THXJK3A==
-[18:32:41] Cliente 1 ligou-se.
-[18:32:41] Cliente 1 desligou-se.
-[18:33:01] pZxSvfd9zqv59CLmiBbEFA==
-[18:33:01] Cliente 2 ligou-se.
-[18:33:01] Cliente 2 desligou-se.
-[18:34:51] DbHAdaO6sTjnQi/THXJK3A==
-[18:34:51] Cliente 1 ligou-se.
-[18:34:51] Cliente 1 desligou-se.
-[18:54:28] /FBQmCsOD9ci1Q6Gj/ppYJdlnwB3WaLkbaj9vNPoURH0mFD8d/MDgDlQJjdn16wxTKMJFFrvlATGYZhu9V5x8a/EHNIOM3rU29hi1i2+4kDfqN9hQ4UiHoNcot2i5HYUETB2nI5jSJfa1xakx+TwG29uWEe668lKXKSVX9GwFwRegBfzBCzSC/279RfIuxMw2WxDT0P0L6WYgGB89xw6x7W88AvDmBsF3vykFwEQc95NaJH0mWEECKepzj0rSmt9PD2UM7ovrMflKg/dytNp0KNsqMAWr+lyLdc3n3OvBeqVxMIADnJ+rqEJGC9yhYXuwIUSfs35gOuVObRBTtPVQIIMx5F+kiU5dRIhE0D7b6G4r+wOIqBvNh6BQV5DnmDFWDJGIcDyclhjS2F/desg0qy3gp/4bItzWG7FQ/2u5jPARCLihK/G0ZsMJ6JVdGzScX+c/NV4rsMwfboaKrDwz64fPKg9KTz0xxMBKeMj5sg=
-[18:54:28] Cliente 2 ligou-se.
-[18:54:28] Cliente 2 desligou-se.
-[18:54:52] VtXRQpOAvqBQn8jAouz1Vh+02e1H5zMHn1M9eRYN3lyBoV60TuRnPbCXfpSuarREGxDASD+aeSjhhiesjG45BgGj18WgIb1vedoHUVSk7+FgZYN6L/mkhK6J2cB3zvy5kiHSCXFJG+kEYJ9ezS3oKH1yT6z1IoQX72GHRvBnRwqcSIdCo5fiu9AegZCRRwLcyLN5Qq9brjwboaM/jWDytiOVhDl0VkyfxPq8bgzyGQvf34wK5zLBsSU/WnSlEsZ3pLzwBV0tKviUcQkANNboC9JGp88TNk9x3BJeseO3JAy2ff7WVlaY1e0BcMHw+rBt/Z36Aj5F/J3xsWaaFa/QEyYz1wBnjw+YKZGYV/t/rJ+HQyd1gz4gDNMwQ0rNNEhGPSHDHznEyttAqPZ5OZBp7369xxj1DMcOeyDc4SKwX+UWw4oLibyGq5E2HmY6g7Uf9MT8tpSkszFIodKh1od4B6NuFnF9WBgOgcNXJUWvaLg=
-[18:54:52] Cliente 1 ligou-se.
-[18:54:52] Cliente 1 desligou-se.
-[18:59:25] jy8rnE64KInIVvPnUSpPbDcf37fS1S1bu3l+a7QDLVpdr8sKDxnz5Mx3agCILyrXWN03PCv3slitKgy1tZ0q9eKXK4QjhKRvlauBzFN1i1pgArRkfqxWfb5FbfgacPnGDdp2HVqHBdaXaPt5wVNCEt6ZIqNfX4qbWkQm5ieAteI+PBSDbJncbd3RZ+GPSPIZekxuXu8fy8xr99QVXfeACaljawIrElvc2KDrRc6zphJs46mPhbqgjRLB1u0VATq+YJwUq/f4ZfXY4/mtpdYLCMM96ClYkOAoFXffUHn24puxOLzNPyEAkeoN4vwrjYOovqpY/mAg7QEemiwJDOWfwSlnp5glg6A0H6OcgeU6b593tirHTLbYAJHomSWvYbLBPzIY2KS1U8wwhHeo8p34s768ctTrYwPXcn9J3H7MZa4aDZhxL1r/dtQXAaSnmM6ldI0dTq7T+EyRUstCtWfp7yDH4rjeRiZ5g+BNHg39LNQ=
-[18:59:25] Cliente 1 ligou-se.
-[18:59:25] Cliente 1 desligou-se.
-[18:59:57] jy8rnE64KInIVvPnUSpPbDcf37fS1S1bu3l+a7QDLVpdr8sKDxnz5Mx3agCILyrXWN03PCv3slitKgy1tZ0q9eKXK4QjhKRvlauBzFN1i1pgArRkfqxWfb5FbfgacPnGDdp2HVqHBdaXaPt5wVNCEt6ZIqNfX4qbWkQm5ieAteI+PBSDbJncbd3RZ+GPSPIZekxuXu8fy8xr99QVXfeACaljawIrElvc2KDrRc6zphJs46mPhbqgjRLB1u0VATq+YJwUq/f4ZfXY4/mtpdYLCMM96ClYkOAoFXffUHn24puxOLzNPyEAkeoN4vwrjYOovqpY/mAg7QEemiwJDOWfwSlnp5glg6A0H6OcgeU6b593tirHTLbYAJHomSWvYbLBPzIY2KS1U8wwhHeo8p34s768ctTrYwPXcn9J3H7MZa4aDZhxL1r/dtQXAaSnmM6ldI0dTq7T+EyRUstCtWfp7yDH4rjeRiZ5g+BNHg39LNQ=
-[18:59:57] Cliente 1 ligou-se.
-[18:59:57] Cliente 1 desligou-se.
-[19:00:16] 7FU6Fzzp3ssbAHw69OnyNLrMPzJqFf54JtZSxQM68173fu9cmEwWQ255m2nkWT+/A9g2BHFI5aQdD0A9Fz0BKWZ/jkl3IkO94D0lC4g0MraI1NhmpuvAHALSVlxf7V86FzRR80Gigpgq1s2ceW/p6yaDu02tB+Ne7hgV4u7/vRbxSgMnOBm4wnXfgYYrtUopaBV+oCfeiXnpuico5TdrxTNLz5JzI2oHMfSScpKH0sMngk1wrnf8ZrD25Yg7Vn/SHexxbn8Mk+vT0T4VuOsLEmaXqq1QgRreCAU/6AN6l0+nAzNn74VgNoI6Nd1C13kDEs8TmjcoLPmi0+21ZaBV57QmPPfixora7mE6ijGY5mWLNwTB/S13CBCjuI40Cfpv6T2ICuOgDI6k4OakFp5oQyj009oSJ/VESQKG5VmRZWE4Exf2Yy9X57uLt7Bd5u0BRah1+UTsKv+4eAWVxXEcd2qSKBZH6jkLivIuO08KcXk=
-[19:00:16] Cliente 3 ligou-se.
-[19:00:16] Cliente 3 desligou-se.
-[19:09:30] 8Dy5r3M9I+OgeKtJ+AqVxCdayD9BreXpQj9rbH8dTDaqq0qO2cDHbV6wP7A5RfCTN3NyNwKatd34amMn12SSy7qXMsuqzEinr9LWwO/YHzsLfUBQtq8l0x6MnUNxG8vxaR8EUIjp5J/zmLaNZOwt01jrNwtwXngCLhgeHlWUkZIxZ5A0VPXorKchqIhD6rjt7PNZt0NLk5gVDK/oHOv6IRTBAVqvdBU0z53KXCraQBn/UHsd+BwT/iUA7a+5S4VLZxQ3FMQofT4DxjW85HvcbIENF5xK+NrgTMIBLIXG7v3uVtF7qARJTVmB4cRBKNuSVZZ3MVCGe9fr1zUgEUcYW44fy+V3oqo11M1Xgrk369nUz0vJjNipkTR0zEiKVN8jFsR5XvWp9gqc3qBPA1gA/9PZ+FHnJRK2oMRvpoL5xlwmhFEiOyC3XAykQMb9p8PybIyQpuGDUL+4XU0VaX+u8/s3jiDo305wEcgv5Vev3vQ=
-[19:09:30] Cliente 1 ligou-se.
-[19:09:30] Cliente 1 desligou-se.
-[19:09:43] FdJareaDeoTW9CwTHMSqif0Y11EkoDvIlKLMFZf6K385t1HIboMYbC7dkybk7XjT13UlrEZwzFlshp/zDUICMxgI3cv87tOjmlCMIf3qweg4Tfh3gAWPMqbXcNK/IUqciVfFlZolYhIod2YJbAwc81vpZh1QuKz38+0Q2vBaosZRtC5C1lGLxkEHyxkbMB9x6gqZgJjxS6pI3vK8RgYrPeFpv+bZwe7R/4bpEbxQ8FQKW7qOZNKSQ8suy+DVcfhp3tZoHJ+ljHcyGsh0ozdPpd1OifD8FOHHqBuUQ7rJmutR0wJOepXm2w1EjPN27YNz6mGBFGopPnoBG1sNsezjDVo2axTKizIhVACwfPhL/QOnHL05NgorVqy1zN/bbRROQxtMNL8RKpcZpRHrwMAE6cW/dsJjO6rdbA39PsGBEUSp5WYgXeABdMxr1lEwAmLVVpSE9LHP9+XM50jp3kRhHarWoRaHtns5xN1paR6bpz8=
-[19:09:43] Cliente 2 ligou-se.
-[19:09:43] Cliente 2 desligou-se.
-[20:51:00] WMlxKYFJmafnj5pVhp0S/S5Cw3KsKqNfdxkv5qjlIo76beuLgsWTZdAKUyILx8T+lmZ4F/NBKBiNIRsxqsZsrxwG3/qhYAQbiW8bTiREMZgXoxwVCFf5wu9qHHtfJ9XG2lw4bNPY7If37Zuw7y7jg2pOtvxPYfSlqKq0BIuCW9VwMfft5luIFxZiEiqjn8+UFNdv0BOngelPTREmCfUKlAUqohQh1WOUmeSdRTvafqnhSw5vIKhfEK4/IMwlwymNqVjnHjVpXeQVQQPzFdA3MFi5AuqbAFN4g1em3Zu+UboxcVBlkDk0NFa+jaSiu8pcrVnamsugazeNf1ATTt93n4Lw0+fnnkSC60T52BVvsdOYzfwdBsTWQia8s1Ijn6nnBZ3W3lKr+ZIGIAoyR/8NlZJTMYxd3L+GFsH2rSgN8FRwWxPVScSfvUAhkYbUfoEmMdpX9L4KC7cIXi4ExhzMlepFmG1cYZRYLYiUFDcCuB4=
-[20:51:00] Cliente 1 ligou-se.
-[20:51:00] Cliente 1 desligou-se.
-[20:51:08] dN/5i4eJULBOWNOn1/K1ft+PucXyz0r5QUCZtf24MiTaNTVMHU3wNsyvLqg48G5r2ba1MqMq00O3F7l6qnzdjVGjw8IMIzzKo+sqMLa/fr9z6fkWQYrlosrTBh+1NdKoQCa9FBdD8j3PMawlJgUL0jKfDArc22u4fqZhJyT6AEarNmGt8tdc4lLqREPZosq3xnT/dL2JRMzZ4Wkof8NcUn7UfmGltmYp/jrVmUPZmseb3nstNqpHPPM8roJAtYe0/qGR0gyFYyxmQHfFdXrd6vqsDbVbHWtE3E5X0r7/XNyX4S+hvg8LK1cS0ZeHxL3Deyf9GLlbyYr6XXlTF8Io9wwNv+0dFNf+i25LE//pmQnr4gl5zqjgmawGnRNRlIHWzc2FY0WPSNOexSY5BiGWy0XU/WpGVRnk5mwh7K6p+6fjjpsUROTY5qU//D/KdGB9myUemxYAPDcaOtcK4rS2Ih1tlNc01Lr3MUQhokPiYsM=
-[20:51:08] Cliente 2 ligou-se.
-[20:51:08] Cliente 2 desligou-se.
-[21:07:34] 4FhfTnFQPtWdFcf6xPfJ/sB5zlGrgtO/hmYEjhe1aQuMZ0fgUcLBxI4MA4YT6dZgW/EX/wyhL5lKf66ydzC0luwDlwGQXY+h7TsVBdHt1pLmBravHGS7NDMl2piDl/Gfc2JYZtY4QnlbLQoh09U2vCctkzkm2Uz35GOJdiflBlfl+Rd05tmvPJkLkq/8n32ofy2xVl1amu7HPmwU8i/UWMMGFbaRp6i7Mu4g1z9R1tfgs+h2zpyxVZkv3hpPbEUx8QujMgO2Q+iw8pS1HbWGupV1D3CD7SZ6T5yyEsrhWYTQ4+qVXcZZsU7KvUKGpEa9LpN7L5zIDsbfECaeAxU6Cl/J+SpKrZErAAQb3TptftkAxyH6MJ5ZE4Xaat0zvesJiDB2kRwZSlVJsz1NfbSQcZdCAQHgCY3bhOJS4nsOT7R8BlvLPUpayjBy8oGPn95k6WKCfi3fmWxFcyU1ikK+L1ncIymuLyTP2pEK4++ZgO4=
-[21:07:34] Cliente 1 ligou-se.
-[21:07:34] Cliente 1 desligou-se.
-[21:07:41] hgaPLJ9SJWcFSvy4MvGCrYaJIjqQwMsFYzvYWKvRuKigvrSrZX4nlWi97k9nAKBecD+Anh+JjeAnNDgRmuI3PUR4eqli8XDlPLOw/44EMUVo+4ADsTaygsirrA/DiA9+g+76QHv2/zW2uZWTdSVnmiht2Vl25oJZxfqZZv5M3VSQ189knTU3mRC2oqGK5kX3+VIr0UzPxfAzqm+EtN8lPFbKmJ78kG6LfmltiIdrRqJrPkyEy8bqoKcLUiJRCbeBXPjOfdfRiKGzm5wUg5KEwU1WjzVRK5ktd6oeBbf6Wo2/pjmh5CbtJCJT781GO2akyJLclhMCSOq21GdXAVN/24WDbc2s80O5JZxSMf+gYbcnOxrBPFSCwRXHPlnB3DTS9XnPDuHsSMToac8KiSLRME62F6klmNAa8DeB2B6P3y5seYZn+ohTvDwnMeQaenKisbEq4OXlNr5sSzik0CG8QxmgQ2qrg0amAvSdDKg0xuA=
-[21:07:41] Cliente 2 ligou-se.
-[21:07:41] Cliente 2 desligou-se.
+[14:26:42] Cliente 1 desligou-se.
+[14:26:55] Cliente 2 ligou-se.
+[14:26:57] Cliente 3 ligou-se.
+[14:27:35] joao:ola
+[14:27:46] filipa:adeus
+[14:27:51] Cliente 2 desligou-se.
+[14:27:52] Cliente 3 desligou-se.
+[14:27:55] Cliente 4 ligou-se.

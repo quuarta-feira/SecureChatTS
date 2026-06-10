@@ -50,6 +50,14 @@ namespace Servidor
                 // Incrementa o número do cliente e mostra na consola.
                 clientCounter++;
                 Console.WriteLine("Cliente {0} Ligado", clientCounter);
+
+                File.AppendAllText(
+                    "chatlog.txt",
+                    "[" + DateTime.Now.ToString("HH:mm:ss") + "] Cliente "
+                    + clientCounter + " ligou-se."
+                    + Environment.NewLine
+                );
+
                 //Tratar o cliente que se ligou
                 ClientHandler clientHandler = new ClientHandler(client, clientCounter);
 
@@ -175,30 +183,17 @@ namespace Servidor
                             "Assinatura válida."
                         );
 
-                        string msgTexto = protocolSI.GetStringFromData();
 
-                        
 
-                        File.AppendAllText(
-                            "chatlog.txt",
-                            "[" + DateTime.Now.ToString("HH:mm:ss") + "] "
-                            + msgTexto
-                            + Environment.NewLine
-                        );
 
                         File.AppendAllText(
-                            "chatlog.txt",
-                            "[" + DateTime.Now.ToString("HH:mm:ss") + "] Cliente "
-                            + clientID + " ligou-se."
-                            + Environment.NewLine
-                        );
+                             "chatlog.txt",
+                             "[" + DateTime.Now.ToString("HH:mm:ss") + "] "
+                             + mensagem
+                             + Environment.NewLine
+                         );
 
-                        File.AppendAllText(
-                            "chatlog.txt",
-                            "[" + DateTime.Now.ToString("HH:mm:ss") + "] Cliente "
-                            + clientID + " desligou-se."
-                            + Environment.NewLine
-                        );
+
 
 
                         Console.WriteLine("Cliente " + clientID + " : " + mensagem);
@@ -227,6 +222,40 @@ namespace Servidor
                         networkStream.Write(ack, 0, ack.Length);
                         break;
 
+                    case ProtocolSICmdType.USER_OPTION_3:
+                        
+                            string path = "chatlog.txt";
+
+                            if (!File.Exists(path))
+                                File.WriteAllText(path, "");
+
+                            string historico = File.ReadAllText(path);
+
+                            int chunkSize = 1024;
+
+                            for (int i = 0; i < historico.Length; i += chunkSize)
+                            {
+                                string chunk = historico.Substring(
+                                    i,
+                                    Math.Min(chunkSize, historico.Length - i)
+                                );
+
+                                string chunkCifrado = EncryptString(chunk);
+
+                                byte[] packetHistorico = protocolSI.Make(
+                                    ProtocolSICmdType.DATA,
+                                    chunkCifrado
+                                );
+
+                                networkStream.Write(packetHistorico, 0, packetHistorico.Length);
+                            }
+
+                            byte[] eof = protocolSI.Make(ProtocolSICmdType.EOF);
+                            networkStream.Write(eof, 0, eof.Length);
+
+                            break;
+                        
+
                     case ProtocolSICmdType.EOT: // Se o pacote disser "Vou desligar":
                                                 // Escreve no servidor que aquele cliente específico se vai embora
                         Console.WriteLine("Fim da comunicação do cliente {0}", clientID);
@@ -235,11 +264,31 @@ namespace Servidor
                         ack = protocolSI.Make(ProtocolSICmdType.ACK);
                         // Envia o último "OK" de volta para o cliente
                         networkStream.Write(ack, 0, ack.Length);
+
+                        File.AppendAllText(
+                            "chatlog.txt",
+                            "[" + DateTime.Now.ToString("HH:mm:ss") + "] Cliente "
+                            + clientID + " desligou-se."
+                            + Environment.NewLine
+                        );
                         // Remove da lista para o servidor não tentar enviar mensagens a quem já saiu
                         Program.clientesLigados.Remove(this);
                         break;
                 }
             }
+
+
+        }
+
+        private string EncryptString(string texto)
+        {
+            ICryptoTransform encryptor = Program.aesGlobal.CreateEncryptor();
+
+            byte[] dados = Encoding.UTF8.GetBytes(texto);
+
+            byte[] cifrado = encryptor.TransformFinalBlock(dados, 0, dados.Length);
+
+            return Convert.ToBase64String(cifrado);
         }
 
         private bool VerificarAssinatura( string mensagem, string assinaturaBase64)
@@ -280,24 +329,6 @@ namespace Servidor
                 );
 
             return Encoding.UTF8.GetString(decifrado);
-        }
-
-        private string EncryptString(string texto)
-        {
-            ICryptoTransform encryptor =
-                Program.aesGlobal.CreateEncryptor();
-
-            byte[] dados =
-                Encoding.UTF8.GetBytes(texto);
-
-            byte[] cifrado =
-                encryptor.TransformFinalBlock(
-                    dados,
-                    0,
-                    dados.Length
-                );
-
-            return Convert.ToBase64String(cifrado);
         }
     }
 }

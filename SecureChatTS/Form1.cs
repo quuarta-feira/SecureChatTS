@@ -275,6 +275,7 @@ namespace SecureChatTS
 
         private bool VerifyLogin(string username, string password)
         {
+
             SqlConnection conn = null;
 
             try
@@ -407,6 +408,15 @@ namespace SecureChatTS
 
         }
 
+        private void PedirHistorico()
+        {
+            ProtocolSI p = new ProtocolSI();
+
+            byte[] packet = p.Make(ProtocolSICmdType.USER_OPTION_3);
+
+            networkStream.Write(packet, 0, packet.Length);
+        }
+
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             string password = textBoxPassword.Text;
@@ -425,6 +435,9 @@ namespace SecureChatTS
                 textBoxPassword.Enabled = false;
 
                 MessageBox.Show("Utilizador logado com sucesso");
+
+                PedirHistorico();
+
             }
             else
             {
