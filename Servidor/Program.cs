@@ -70,7 +70,14 @@ namespace Servidor                  // Esta é a pasta onde fica guardada o cód
 
                 Console.WriteLine("Cliente {0} Ligado", clientCounter);
 
-                                                                                            // Se removeres esta linha: O histórico de acessos deixa de ser guardado no disco.
+                // ALTERACAO TESTE
+                File.AppendAllText(
+                    "chatlog.txt",
+                    "Conversação entre clientes" + Environment.NewLine
+                );
+                //
+
+                // Se removeres esta linha: O histórico de acessos deixa de ser guardado no disco.
                 File.AppendAllText(                                                         // Grava de forma persistente a entrada do cliente no ficheiro chatlog.txt sem apagar o conteúdo antigo.
                     "chatlog.txt",                                                          // Se o ficheiro chatlog.txt não existir: O C# cria o ficheiro automaticamente neste exato momento.
                     "[" + DateTime.Now.ToString("HH:mm:ss") + "] Cliente "
@@ -231,13 +238,41 @@ namespace Servidor                  // Esta é a pasta onde fica guardada o cód
                                 assinatura                                                  // Se a assinatura não tiver sido gerada com a chave privada correspondente à chave pública do cliente: A função retorna false.
                             );
 
-                        
+                        //ALTERACAO TESTE
+                        byte[] resultadoVerificacao =
+                            protocolSI.Make(
+                                ProtocolSICmdType.USER_OPTION_5,
+                                assinaturaValida.ToString()
+                            );
+
+                        foreach (ClientHandler outroCliente in Program.clientesLigados)
+                        {
+                            outroCliente.EnviarMensagem(resultadoVerificacao);
+                        }
+
+                        //
+
                         if (!assinaturaValida)                                              // Se alguém alterou a mensagem no caminho ou se a chave não bater:
                         {
                             Console.WriteLine("Assinatura inválida!");
                             break;                                                          // Abandona o processamento desta mensagem inválida imediatamente, protegendo o chat contra falsificações.
                         }
 
+                        //ALTERACAO TESTE
+
+                        byte[] packetHash =
+                        protocolSI.Make(
+                            ProtocolSICmdType.USER_OPTION_4,
+                            assinaturaValida.ToString()
+                        );
+
+                        networkStream.Write(
+                            packetHash,
+                            0,
+                            packetHash.Length
+                        );
+
+                        //
                         Console.WriteLine("Assinatura válida.");
 
                         

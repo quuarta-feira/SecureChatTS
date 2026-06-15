@@ -1,57 +1,140 @@
-[14:26:42] Cliente 1 desligou-se.
-[14:26:55] Cliente 2 ligou-se.
-[14:26:57] Cliente 3 ligou-se.
-[14:27:35] joao:ola
-[14:27:46] filipa:adeus
-[14:27:51] Cliente 2 desligou-se.
-[14:27:52] Cliente 3 desligou-se.
-[14:27:55] Cliente 4 ligou-se.
-[14:30:56] Cliente 1 ligou-se.
-[14:31:01] Cliente 2 ligou-se.
-[14:31:48] filipa:ola
-[14:31:57] filipa:tudo bem
-[14:32:07] filipa:adeus
-[14:39:48] Cliente 1 ligou-se.
-[14:40:04] Cliente 1 ligou-se.
-[14:40:12] Cliente 2 ligou-se.
-[14:41:19] Cliente 1 ligou-se.
-[14:44:16] Cliente 1 ligou-se.
-[14:44:34] Cliente 2 ligou-se.
-[14:44:50] joao:ola
-[14:45:43] Cliente 2 desligou-se.
-[14:45:45] Cliente 1 desligou-se.
-[14:51:33] Cliente 1 ligou-se.
-[14:51:45] Cliente 2 ligou-se.
-[14:51:56] joao:ola
-[14:52:00] filipa:adeus
-[14:52:03] Cliente 1 desligou-se.
-[14:52:06] Cliente 3 ligou-se.
-[14:52:21] Cliente 3 desligou-se.
-[14:52:25] Cliente 2 desligou-se.
-[18:47:52] Cliente 1 ligou-se.
-[18:48:05] Cliente 1 desligou-se.
-[18:54:07] Cliente 1 ligou-se.
-[18:54:31] Cliente 2 ligou-se.
-[18:54:49] joao:ola
-[18:54:54] filipa:ola
-[18:54:55] Cliente 1 desligou-se.
-[18:54:56] Cliente 2 desligou-se.
-[18:54:59] Cliente 3 ligou-se.
-[18:55:14] Cliente 4 ligou-se.
-[18:55:34] joao:ola
-[18:55:36] Cliente 4 desligou-se.
-[18:55:37] Cliente 3 desligou-se.
-[19:02:00] Cliente 1 ligou-se.
-[19:02:08] Cliente 1 desligou-se.
-[19:02:55] Cliente 1 ligou-se.
-[19:07:08] Cliente 1 ligou-se.
-[19:07:16] Cliente 1 desligou-se.
-[19:08:39] Cliente 1 ligou-se.
-[19:08:47] Cliente 1 desligou-se.
-[19:10:52] Cliente 1 ligou-se.
-[19:11:10] Cliente 1 desligou-se.
-[19:11:14] Cliente 1 ligou-se.
-[19:11:21] Cliente 1 desligou-se.
-[19:11:26] Cliente 1 ligou-se.
-[19:11:40] Cliente 1 desligou-se.
-[17:11:52] Cliente 1 ligou-se.
+[16:43:33] Cliente 1 ligou-se.
+[16:43:44] filipa:teste
+[16:44:42] Cliente 1 ligou-se.
+[16:44:49] Cliente 2 ligou-se.
+[16:45:18] joao:teste
+[16:46:59] Cliente 1 ligou-se.
+[16:47:11] filipa:teste
+[16:47:27] filipa:teste
+[16:47:36] filipa:teste2
+[16:47:43] filipa:teste
+[16:47:53] Cliente 1 ligou-se.
+[16:48:08] filipa:teste
+[16:49:34] Cliente 1 ligou-se.
+[16:49:52] filipa:teste
+[16:50:06] filipa:teste2
+[16:51:39] Cliente 1 ligou-se.
+[16:51:52] filipa:ola
+
+[16:53:08] Cliente 1 ligou-se.
+[16:53:19] filipa:ola
+[16:53:27] filipa:teste
+Conversação entre clientes
+[16:56:10] Cliente 1 ligou-se.
+[16:56:25] filipa:teste
+Conversação entre clientes
+[16:56:57] Cliente 1 ligou-se.
+[16:57:08] filipa:teste
+Conversação entre clientes
+[16:58:43] Cliente 1 ligou-se.
+[16:59:03] joao:teste2
+[17:00:00] Cliente 1 ligou-se.
+[17:00:12] filipa:teste
+[17:03:52] Cliente 1 ligou-se.
+[17:04:03] filipa:teste
+[17:04:10] Cliente 1 desligou-se.
+[17:07:20] Cliente 1 ligou-se.
+[17:07:32] filipa:ola
+[17:08:05] Cliente 2 ligou-se.
+[17:08:45] Cliente 1 ligou-se.
+[17:09:00] Cliente 1 ligou-se.
+[17:09:04] Cliente 2 ligou-se.
+[17:09:31] Cliente 1 ligou-se.
+[17:10:01] Cliente 1 ligou-se.
+[17:10:15] Cliente 1 ligou-se.
+[17:11:34] Cliente 1 ligou-se.
+[17:13:29] Cliente 1 ligou-se.
+[17:14:53] Cliente 1 ligou-se.
+[17:15:03] filipa:ola
+[17:15:13] filipa:teste
+[17:15:26] Cliente 1 ligou-se.
+[17:15:41] joao:teste
+[17:16:00] Cliente 1 ligou-se.
+[17:16:09] filipa:teste
+[17:16:15] Cliente 1 desligou-se.
+Conversação entre clientes
+[17:19:12] Cliente 1 ligou-se.
+[17:19:24] filipa:teste
+Conversação entre clientes
+[17:20:16] Cliente 1 ligou-se.
+[17:20:25] filipa:teste
+Conversação entre clientes
+[17:20:37] Cliente 2 ligou-se.
+[17:20:48] joao:teste
+[17:20:52] Cliente 2 desligou-se.
+[17:21:01] filipa:teste
+[17:21:04] Cliente 1 desligou-se.
+Conversação entre clientes
+[17:21:50] Cliente 1 ligou-se.
+[17:22:08] filipa:teste
+Conversação entre clientes
+[17:22:22] Cliente 1 ligou-se.
+[17:22:33] filipa:teste
+Conversação entre clientes
+[17:22:57] Cliente 1 ligou-se.
+[17:23:09] filipa:teste
+Conversação entre clientes
+[17:23:33] Cliente 1 ligou-se.
+[17:23:43] filipa:teste
+[17:23:48] Cliente 1 desligou-se.
+Conversação entre clientes
+[17:23:55] Cliente 1 ligou-se.
+[17:24:10] filipa:teste2
+Conversação entre clientes
+[17:24:20] Cliente 1 ligou-se.
+[17:24:32] filipa:filipa
+[17:24:43] Cliente 1 desligou-se.
+Conversação entre clientes
+[17:24:55] Cliente 1 ligou-se.
+[17:25:06] joao:teste2
+[17:25:15] Cliente 1 desligou-se.
+Conversação entre clientes
+[17:25:59] Cliente 1 ligou-se.
+[17:26:18] filipa:teste
+Conversação entre clientes
+[17:26:57] Cliente 1 ligou-se.
+[17:27:10] filipa:teste
+Conversação entre clientes
+[17:27:19] Cliente 1 ligou-se.
+[17:27:31] filipa:teste
+Conversação entre clientes
+[17:27:51] Cliente 1 ligou-se.
+[17:28:04] filipa:ola
+[17:28:12] Cliente 1 desligou-se.
+Conversação entre clientes
+[17:28:18] Cliente 1 ligou-se.
+[17:28:30] filipa:ola
+[17:28:40] filipa:ola
+[17:28:49] Cliente 1 desligou-se.
+Conversação entre clientes
+[17:31:00] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:31:48] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:32:27] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:32:44] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:34:04] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:34:39] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:35:16] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:35:41] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:36:26] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:36:48] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:37:53] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:44:41] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:45:17] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:48:35] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:49:16] Cliente 1 ligou-se.
+Conversação entre clientes
+[17:50:19] Cliente 1 ligou-se.

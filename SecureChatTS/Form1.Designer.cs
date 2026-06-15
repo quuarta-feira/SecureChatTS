@@ -30,7 +30,6 @@
         {
             this.textBoxMensagem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.bt_Enviar = new System.Windows.Forms.Button();
             this.bt_Sair = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,6 +39,11 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonRegistar = new System.Windows.Forms.Button();
+            this.enviar_bt_TP = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelHash = new System.Windows.Forms.Label();
+            this.textBoxHash = new System.Windows.Forms.TextBox();
+            this.buttonVerificar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxMensagem
@@ -61,19 +65,6 @@
             this.label1.Size = new System.Drawing.Size(252, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mensagem para o servidor:";
-            // 
-            // bt_Enviar
-            // 
-            this.bt_Enviar.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.bt_Enviar.BackColor = System.Drawing.Color.White;
-            this.bt_Enviar.ForeColor = System.Drawing.Color.Black;
-            this.bt_Enviar.Location = new System.Drawing.Point(968, 513);
-            this.bt_Enviar.Name = "bt_Enviar";
-            this.bt_Enviar.Size = new System.Drawing.Size(95, 100);
-            this.bt_Enviar.TabIndex = 2;
-            this.bt_Enviar.Text = "Enviar";
-            this.bt_Enviar.UseVisualStyleBackColor = false;
-            this.bt_Enviar.Click += new System.EventHandler(this.bt_Enviar_Click);
             // 
             // bt_Sair
             // 
@@ -170,12 +161,68 @@
             this.buttonRegistar.UseVisualStyleBackColor = false;
             this.buttonRegistar.Click += new System.EventHandler(this.buttonRegistar_Click);
             // 
+            // enviar_bt_TP
+            // 
+            this.enviar_bt_TP.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.enviar_bt_TP.BackColor = System.Drawing.Color.White;
+            this.enviar_bt_TP.ForeColor = System.Drawing.Color.Black;
+            this.enviar_bt_TP.Location = new System.Drawing.Point(968, 513);
+            this.enviar_bt_TP.Name = "enviar_bt_TP";
+            this.enviar_bt_TP.Size = new System.Drawing.Size(95, 100);
+            this.enviar_bt_TP.TabIndex = 17;
+            this.enviar_bt_TP.Text = "Enviar";
+            this.enviar_bt_TP.UseVisualStyleBackColor = false;
+            this.enviar_bt_TP.Click += new System.EventHandler(this.enviar_bt_TP_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "label5";
+            // 
+            // labelHash
+            // 
+            this.labelHash.AutoSize = true;
+            this.labelHash.ForeColor = System.Drawing.Color.White;
+            this.labelHash.Location = new System.Drawing.Point(905, 105);
+            this.labelHash.Name = "labelHash";
+            this.labelHash.Size = new System.Drawing.Size(158, 20);
+            this.labelHash.TabIndex = 19;
+            this.labelHash.Text = "HASH VERIFICADA";
+            // 
+            // textBoxHash
+            // 
+            this.textBoxHash.Location = new System.Drawing.Point(909, 128);
+            this.textBoxHash.Name = "textBoxHash";
+            this.textBoxHash.ReadOnly = true;
+            this.textBoxHash.Size = new System.Drawing.Size(154, 26);
+            this.textBoxHash.TabIndex = 20;
+            this.textBoxHash.TextChanged += new System.EventHandler(this.textBoxHash_TextChanged);
+            // 
+            // buttonVerificar
+            // 
+            this.buttonVerificar.Location = new System.Drawing.Point(892, 172);
+            this.buttonVerificar.Name = "buttonVerificar";
+            this.buttonVerificar.Size = new System.Drawing.Size(171, 45);
+            this.buttonVerificar.TabIndex = 21;
+            this.buttonVerificar.Text = "Verificar Integridade";
+            this.buttonVerificar.UseVisualStyleBackColor = true;
+            this.buttonVerificar.Click += new System.EventHandler(this.buttonVerificar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1075, 625);
+            this.Controls.Add(this.buttonVerificar);
+            this.Controls.Add(this.textBoxHash);
+            this.Controls.Add(this.labelHash);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.enviar_bt_TP);
             this.Controls.Add(this.buttonRegistar);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
@@ -185,7 +232,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.bt_Sair);
-            this.Controls.Add(this.bt_Enviar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxMensagem);
             this.Name = "Form1";
@@ -200,7 +246,6 @@
 
         private System.Windows.Forms.TextBox textBoxMensagem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button bt_Enviar;
         private System.Windows.Forms.Button bt_Sair;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label4;
@@ -210,6 +255,11 @@
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Button buttonRegistar;
+        private System.Windows.Forms.Button enviar_bt_TP;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelHash;
+        private System.Windows.Forms.TextBox textBoxHash;
+        private System.Windows.Forms.Button buttonVerificar;
     }
 }
 

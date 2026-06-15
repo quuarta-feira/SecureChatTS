@@ -45,9 +45,10 @@ namespace SecureChatTS
         private string usernameAtual = "";                                                  // Guarda em memória RAM o nome do utilizador que efetuou o login com sucesso.
                                                                                             // Se removeres: O programa não sabe quem anexar no cabeçalho "Username:Mensagem" antes de enviar dados.
 
+        //ALTERACAO TESTE
+        private bool ultimaMensagemValida = false;
+        //
 
-        
-        
         private string connectionString =                                                   // String de ligação que dita onde está guardada a base de dados SQL Server LocalDB.
             @"Data Source=(LocalDB)\MSSQLLocalDB;
             Initial Catalog=SecureChatDB;
@@ -275,8 +276,52 @@ namespace SecureChatTS
 
                         continue;                                                           // Ignora o resto do código do while e volta ao topo à espera de mensagens de texto reais.
                     }
+                    //ALTERACAO TESTE
+                    if (protocolSI.GetCmdType() == ProtocolSICmdType.USER_OPTION_4)
+                    {
+                        string resultado =
+                            protocolSI.GetStringFromData();
 
-                    
+                        string[] partes = resultado.Split('|');
+
+                        if (partes.Length > 1)
+                        {
+                            string valor = partes[1];
+
+                            textBoxHash.Invoke(new MethodInvoker(delegate
+                            {
+                                textBoxHash.Text = valor;
+                            }));
+                        }
+
+                        continue;
+                    }
+
+                    if (protocolSI.GetCmdType() == ProtocolSICmdType.USER_OPTION_5)
+                    {
+                        string recebido =
+                            protocolSI.GetStringFromData();
+
+                        MessageBox.Show(
+                            "Recebido USER_OPTION_5 = " +
+                            recebido
+                        );
+
+                        ultimaMensagemValida =
+                            Convert.ToBoolean(recebido);
+
+                        textBoxHash.Invoke(
+                            new MethodInvoker(delegate
+                            {
+                                textBoxHash.Text =
+                                    ultimaMensagemValida.ToString();
+                            })
+                        );
+
+                        continue;
+                    }
+                    //
+
                     if (protocolSI.GetCmdType() == ProtocolSICmdType.DATA)                  // SE FOR UM PACOTE DE TEXTO (DATA):
                     {
                         string recebido = protocolSI.GetStringFromData();                   // Extrai a string cifrada da mensagem recebida do servidor.
@@ -445,50 +490,7 @@ namespace SecureChatTS
             }
         }
 
-        
-        private void bt_Enviar_Click(object sender, EventArgs e)                            // Evento disparado ao carregar no botão "Enviar Mensagem".
-        {
-            
-            if (!autenticado)                                                               // Bloqueia envios anónimos.
-            {
-                MessageBox.Show("Tem de fazer login primeiro.");
-                return;
-            }
-
-            
-            string msg = textBoxMensagem.Text;                                              // Guarda o texto da caixa de texto numa variável e limpa a caixa a seguir
-
-            if (string.IsNullOrWhiteSpace(msg)) return;                                     // Se o utilizador só carregar em Espaços ou enviar vazio, sai do método sem gastar dados.
-
-
-            textBoxMensagem.Clear();                                                        // Limpa o controlo visual para a próxima mensagem.
-
-            ProtocolSI protocoloEnvio = new ProtocolSI();                                   // UM PROTOCOLO NOVO AQUI SÓ PARA ENVIAR (Para não chocar com a Thread)
-                                                                                            // Se usasses o mesmo objeto global protocolSI da Thread de escuta: Ocorria corrupção de dados na memória se estivesses a ler e a escrever ao mesmo tempo.
-
-
-            string mensagemCompleta = usernameAtual + ":" + msg;                            // Formata a string combinando a identidade do utilizador e a mensagem.
-
-
-            string assinatura = AssinarMensagem(mensagemCompleta);                          // Assina digitalmente a string gerada.
-
-
-            string pacoteFinal = mensagemCompleta + "|" + assinatura;                       // Monta o payload final: "Utilizador:Mensagem|Assinatura_Base64"
-
-
-            string mensagemCifrada = EncryptString(pacoteFinal);                            // Aplica a cifra AES sobre todo este bloco de dados.
-
-
-            
-            byte[] packet = protocoloEnvio.Make(                                            // Transforma num pacote de transmissão DATA suportado pelo protocolo.
-                ProtocolSICmdType.DATA,
-                mensagemCifrada
-            );
-
-            networkStream.Write(packet, 0, packet.Length);                                  // Empurra os bytes pelo "tubo" (stream) em direção ao servidor
-
-        }
-
+       
         
         private void bt_Sair_Click(object sender, EventArgs e)                              // Evento disparado ao carregar no botão "Sair".
         {
@@ -588,5 +590,75 @@ namespace SecureChatTS
 
             MessageBox.Show("Utilizador registado com sucesso");
         }
+
+
+        /// ALTERADO TESTE PRATICO
+        private void enviar_bt_TP_Click(object sender, EventArgs e)
+        {
+            if (!autenticado)                                                               // Bloqueia envios anónimos.
+            {
+                MessageBox.Show("Tem de fazer login primeiro.");
+                return;
+            }
+
+
+            string msg = textBoxMensagem.Text;                                              // Guarda o texto da caixa de texto numa variável e limpa a caixa a seguir
+
+            if (string.IsNullOrWhiteSpace(msg)) return;                                     // Se o utilizador só carregar em Espaços ou enviar vazio, sai do método sem gastar dados.
+
+
+            textBoxMensagem.Clear();                                                        // Limpa o controlo visual para a próxima mensagem.
+
+            ProtocolSI protocoloEnvio = new ProtocolSI();                                   // UM PROTOCOLO NOVO AQUI SÓ PARA ENVIAR (Para não chocar com a Thread)
+                                                                                            // Se usasses o mesmo objeto global protocolSI da Thread de escuta: Ocorria corrupção de dados na memória se estivesses a ler e a escrever ao mesmo tempo.
+
+
+            string mensagemCompleta = usernameAtual + ":" + msg;                            // Formata a string combinando a identidade do utilizador e a mensagem.
+
+
+            string assinatura = AssinarMensagem(mensagemCompleta);                          // Assina digitalmente a string gerada.
+
+
+            string pacoteFinal = mensagemCompleta + "|" + assinatura;                       // Monta o payload final: "Utilizador:Mensagem|Assinatura_Base64"
+
+
+            string mensagemCifrada = EncryptString(pacoteFinal);                            // Aplica a cifra AES sobre todo este bloco de dados.
+
+
+
+            byte[] packet = protocoloEnvio.Make(                                            // Transforma num pacote de transmissão DATA suportado pelo protocolo.
+                ProtocolSICmdType.DATA,
+                mensagemCifrada
+            );
+
+            networkStream.Write(packet, 0, packet.Length);                                  // Empurra os bytes pelo "tubo" (stream) em direção ao servidor
+
+        }
+
+        private void buttonVerificar_Click(object sender, EventArgs e)
+        {
+            if (ultimaMensagemValida)
+            {
+                MessageBox.Show("Mensagem íntegra. Assinatura válida.");
+            }
+            else
+            {
+                MessageBox.Show("Mensagem alterada. Assinatura inválida.");
+            }
+        }
+
+        private void textBoxHash_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+
+
+
+
+
+
+
+
