@@ -244,7 +244,12 @@ namespace Servidor                  // Esta é a pasta onde fica guardada o cód
                         
                         File.AppendAllText(                                                 // Escreve a mensagem validada no histórico chatlog.txt.
                              "chatlog.txt",                                                 // Significa que mesmo que a mensagem seja legítima, se o ficheiro estiver bloqueado por outro programa ou o disco cheio: Esta linha lança uma IOException e o servidor vai abaixo.
-                             "[" + DateTime.Now.ToString("HH:mm:ss") + "] "                 // O timestamp é importante para manter a ordem cronológica das mensagens no histórico, especialmente se o servidor ficar offline por um tempo e depois voltar.
+                             /********************************************************************************* TESTE PRATICO *******************************************************************/
+
+                             "[" + DateTime.Now.ToString("HH:mm:ss") + "] " +               // O timestamp é importante para manter a ordem cronológica das mensagens no histórico, especialmente se o servidor ficar offline por um tempo e depois voltar.
+                             "Conversção entre Clientes"                                    // TESTE PRATICO ALTERAÇÔES - Esta é a parte que vai ser adicionada no log 
+                             /******************************************************************************* FIM TESTE PRATICO *******************************************************************/
+
                              + mensagem                                                     // Esta variável contém o texto original da mensagem, sem a assinatura, para que o histórico fique limpo e legível. Se colocares "textoRecebido" aqui: O histórico vai ficar poluído com as assinaturas junto das mensagens.
                              + Environment.NewLine                                          // Garante que cada mensagem nova no histórico começa numa linha nova. Se removeres: Todas as mensagens vão se amontoar na mesma linha, tornando o histórico ilegível.
                          );                                                                 // Se o disco estiver cheio: Lança uma IOException e desliga o servidor.

@@ -55,3 +55,16 @@
 [19:11:26] Cliente 1 ligou-se.
 [19:11:40] Cliente 1 desligou-se.
 [17:11:52] Cliente 1 ligou-se.
+[16:13:11] Cliente 1 ligou-se.
+[16:29:45] Cliente 1 ligou-se.
+[16:30:09] joao:aaa
+[16:30:21] Cliente 1 desligou-se.
+[16:35:10] Cliente 1 ligou-se.
+[16:35:21] Cliente 1 desligou-se.
+[16:39:47] Cliente 1 ligou-se.
+[16:39:54] Cliente 1 desligou-se.
+[16:42:33] Cliente 1 ligou-se.
+[16:42:54] joao:teste aaaaa
+[16:43:15] Cliente 1 desligou-se.
+[17:01:06] Cliente 1 ligou-se.
+[17:01:23] Conversção entre Clientesjoao:teste

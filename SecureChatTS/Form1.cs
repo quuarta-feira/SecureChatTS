@@ -444,7 +444,6 @@ namespace SecureChatTS
                 cmd.ExecuteNonQuery();                                                      // Salva permanentemente as informações nas linhas da tabela.
             }
         }
-
         
         private void bt_Enviar_Click(object sender, EventArgs e)                            // Evento disparado ao carregar no botão "Enviar Mensagem".
         {
@@ -588,5 +587,53 @@ namespace SecureChatTS
 
             MessageBox.Show("Utilizador registado com sucesso");
         }
+
+
+        /********************************************************************************* TESTE PRATICO *******************************************************************/
+                                                                                            // Como em principio o codigo está bem estruturado e as verificaç~oes das mensagens estaão bem planeadas, há-de dar sempre True, mesmo quando nenhuma mensagem foi enviada (Porque como o programa tem histórico verifica sempre a ultima mensagem), só ira dar um false se o programa tiver um erro catastrófico enquanto roda
+        private void button_TestePratico_Click(object sender, EventArgs e)                  // Esta função serve para que ao clicar no butão, depois de uma mensagem ser enviada, mostre na textbox em baixo se a assinaura da mensagem foi valida
+        {
+            try                                                                             // Exemplo: mensagem e assinatura recebidas
+            {
+                
+                string mensagem         = "Teste";                                          // Define a variavel com o valor de teste, decidi fazer assim para saber se estava a funcionar, mas posso deixar a variavel com o valor vazio, ou de serro que deve ser o correto a fazer
+                string assinaturaBase64 = AssinarMensagem(mensagem);                        // Define uma variavel string com o valor retornado da função veriificar assinatura
+
+                bool valida = VerificarAssinatura(mensagem, assinaturaBase64);              // Verifica se a assinatura é falsa ou não, se for valida prossegue
+
+                textBox_TestePratico.Text = valida.ToString();                              // E mostra na text Box, se tudo correr bem True
+            }                                                                               // Como em principio o codigo está bem estruturado e as verificaç~oes das mensagens estaão bem planeadas, há-de dar sempre True, mesmo quando nenhuma mensagem foi enviada (Porque como o programa tem histórico verifica sempre a ultima mensagem), só ira dar um false se o programa tiver um erro catastrófico enquanto roda
+            catch
+            {
+                textBox_TestePratico.Text = "False";                                        // Caso contrario é marcada como falsa
+            }
+        }
+
+        // Esta função é literalmente igual à que ja tinhamos no servidor, funciona da forma escrita nos comentários, apenas fiz ctrl+C ctrl+V da função do servidor e  removi de " rsa.FromXmlString(publicKeyClient);" o "Client"
+        private bool VerificarAssinatura(string mensagem, string assinaturaBase64)          // Método auxiliar que valida a assinatura assimétrica RSA SHA256 vinda do cliente.
+        {                                                                                   // Se a assinaturaBase64 vier corrompida (caracteres inválidos fora do padrão Base64): Lança uma FormatException nesta linha.
+                                                                                            // Se removeres este método: O servidor perde o pilar do "Não-repúdio" e da "Autenticidade", aceitando qualquer mensagem adulterada por terceiros na rede.
+
+            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();                  // Instancia o provedor de serviços criptográficos RSA.
+
+
+            rsa.FromXmlString(publicKey);                                                   // Alimenta o motor RSA com a chave pública do cliente guardada previamente no handshake.
+
+
+            byte[] assinatura = Convert.FromBase64String(assinaturaBase64);                 // Converte a assinatura recebida em formato de texto Base64 de volta para o array de bytes binário original.
+
+
+            byte[] dados = Encoding.UTF8.GetBytes(mensagem);                                // Converte o texto da mensagem recebida em bytes para podermos recalcular o hash localmente.
+
+
+
+            return rsa.VerifyData(                                                          // Verifica matematicamente os dados contra a assinatura utilizando o identificador oficial do algoritmo SHA256.
+                dados,
+                CryptoConfig.MapNameToOID("SHA256"),
+                assinatura
+            );                                                                              // Retorna 'true' se a assinatura foi gerada pela chave privada correspondente a esta chave pública sobre esta exata mensagem. Caso contrário, retorna 'false'.
+        }
+        /********************************************************************************* FIM TESTE PRATICO *******************************************************************/
+
     }
 }

@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\",
+  "WorkspaceRootPath": "C:\\Users\\Utilizador\\source\\repos\\SecureChatTS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9C43A54B-3EC1-444E-A0FC-DB4397F33F23}|SecureChatTS\\SecureChatTS.csproj|c:\\users\\filipa\\source\\repos\\securechatts\\securechatts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{116D1410-59E9-430A-9722-C22A2DF33F30}|Servidor\\Servidor.csproj|C:\\Users\\Utilizador\\source\\repos\\SecureChatTS\\servidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{116D1410-59E9-430A-9722-C22A2DF33F30}|Servidor\\Servidor.csproj|solutionrelative:servidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C43A54B-3EC1-444E-A0FC-DB4397F33F23}|SecureChatTS\\SecureChatTS.csproj|c:\\users\\utilizador\\source\\repos\\securechatts\\securechatts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C43A54B-3EC1-444E-A0FC-DB4397F33F23}|SecureChatTS\\SecureChatTS.csproj|solutionrelative:securechatts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C43A54B-3EC1-444E-A0FC-DB4397F33F23}|SecureChatTS\\SecureChatTS.csproj|C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\securechatts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{9C43A54B-3EC1-444E-A0FC-DB4397F33F23}|SecureChatTS\\SecureChatTS.csproj|C:\\Users\\Utilizador\\source\\repos\\SecureChatTS\\securechatts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9C43A54B-3EC1-444E-A0FC-DB4397F33F23}|SecureChatTS\\SecureChatTS.csproj|solutionrelative:securechatts\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{116D1410-59E9-430A-9722-C22A2DF33F30}|Servidor\\Servidor.csproj|C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\servidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{116D1410-59E9-430A-9722-C22A2DF33F30}|Servidor\\Servidor.csproj|solutionrelative:servidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,47 +22,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\SecureChatTS\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Utilizador\\source\\repos\\SecureChatTS\\SecureChatTS\\Form1.cs",
               "RelativeDocumentMoniker": "SecureChatTS\\Form1.cs",
-              "ToolTip": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\SecureChatTS\\Form1.cs",
+              "ToolTip": "C:\\Users\\Utilizador\\source\\repos\\SecureChatTS\\SecureChatTS\\Form1.cs",
               "RelativeToolTip": "SecureChatTS\\Form1.cs",
-              "ViewState": "AgIAAI8AAAAAAAAAAAAswHYBAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAD0CAAAAAAAAAAAAAE8CAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-10T18:01:29.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\SecureChatTS\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Utilizador\\source\\repos\\SecureChatTS\\SecureChatTS\\Form1.cs",
               "RelativeDocumentMoniker": "SecureChatTS\\Form1.cs",
-              "ToolTip": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\SecureChatTS\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\Utilizador\\source\\repos\\SecureChatTS\\SecureChatTS\\Form1.cs [Design]",
               "RelativeToolTip": "SecureChatTS\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-10T18:01:28.245Z"
+              "WhenOpened": "2026-06-10T18:01:28.245Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\Servidor\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Utilizador\\source\\repos\\SecureChatTS\\Servidor\\Program.cs",
               "RelativeDocumentMoniker": "Servidor\\Program.cs",
-              "ToolTip": "C:\\Users\\Filipa\\source\\repos\\SecureChatTS\\Servidor\\Program.cs",
+              "ToolTip": "C:\\Users\\Utilizador\\source\\repos\\SecureChatTS\\Servidor\\Program.cs",
               "RelativeToolTip": "Servidor\\Program.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwHoAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAN4AAAAAAAAAAAApwPkAAAB6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T17:27:40.239Z"
+              "WhenOpened": "2026-06-09T17:27:40.239Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -25,3 +25,16 @@ C:\Users\Filipa\source\repos\SecureChatTS\SecureChatTS\obj\Debug\SecureChatTS.cs
 C:\Users\Filipa\source\repos\SecureChatTS\SecureChatTS\obj\Debug\SecureCh.0EB77186.Up2Date
 C:\Users\Filipa\source\repos\SecureChatTS\SecureChatTS\obj\Debug\SecureChatTS.exe
 C:\Users\Filipa\source\repos\SecureChatTS\SecureChatTS\obj\Debug\SecureChatTS.pdb
+C:\Users\Utilizador\source\repos\SecureChatTS\SecureChatTS\bin\Debug\SecureChatDB.mdf
+C:\Users\Utilizador\source\repos\SecureChatTS\SecureChatTS\bin\Debug\SecureChatDB_log.ldf
+C:\Users\Utilizador\source\repos\SecureChatTS\SecureChatTS\bin\Debug\SecureChatTS.exe.config
+C:\Users\Utilizador\source\repos\SecureChatTS\SecureChatTS\bin\Debug\SecureChatTS.exe
+C:\Users\Utilizador\source\repos\SecureChatTS\SecureChatTS\bin\Debug\SecureChatTS.pdb
+C:\Users\Utilizador\source\repos\SecureChatTS\SecureChatTS\obj\Debug\SecureChatTS.csproj.AssemblyReference.cache
+C:\Users\Utilizador\source\repos\SecureChatTS\SecureChatTS\obj\Debug\SecureChatTS.Form1.resources
+C:\Users\Utilizador\source\repos\SecureChatTS\SecureChatTS\obj\Debug\SecureChatTS.Properties.Resources.resources
+C:\Users\Utilizador\source\repos\SecureChatTS\SecureChatTS\obj\Debug\SecureChatTS.csproj.GenerateResource.cache
+C:\Users\Utilizador\source\repos\SecureChatTS\SecureChatTS\obj\Debug\SecureChatTS.csproj.CoreCompileInputs.cache
+C:\Users\Utilizador\source\repos\SecureChatTS\SecureChatTS\obj\Debug\SecureCh.0EB77186.Up2Date
+C:\Users\Utilizador\source\repos\SecureChatTS\SecureChatTS\obj\Debug\SecureChatTS.exe
+C:\Users\Utilizador\source\repos\SecureChatTS\SecureChatTS\obj\Debug\SecureChatTS.pdb
