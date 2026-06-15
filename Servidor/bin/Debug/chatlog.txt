@@ -138,3 +138,5 @@ Conversação entre clientes
 [17:49:16] Cliente 1 ligou-se.
 Conversação entre clientes
 [17:50:19] Cliente 1 ligou-se.
+Conversação entre clientes
+[19:57:29] Cliente 1 ligou-se.
