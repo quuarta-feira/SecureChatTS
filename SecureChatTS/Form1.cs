@@ -587,6 +587,7 @@ namespace SecureChatTS
 
 
             MessageBox.Show("Utilizador registado com sucesso");
+       
         }
     }
 }
